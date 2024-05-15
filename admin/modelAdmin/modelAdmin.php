@@ -37,8 +37,7 @@ class ModelAdmin
             }
         }
         return $logIn;
-        // https://php.ru/manual/function.password-hash.html
-        // https://php.ru/manual/function.password-verify.html
+       
     }
     // ВЫХОД ИЗ АДМИНКИ
     public static function userLogout()

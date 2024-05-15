@@ -31,6 +31,12 @@
                             <input type="text" name="title" class="form-control" required value="<?php echo $detail['title']; ?>">
                         </td>
                     </tr>
+                    <tr>
+                        <td>News chtitle</td>
+                        <td>
+                            <input type="text" name="chtitle" class="form-control" required value="<?php echo $detail['title']; ?>">
+                        </td>
+                    </tr>
 
                     <tr>
                         <td>News text</td>

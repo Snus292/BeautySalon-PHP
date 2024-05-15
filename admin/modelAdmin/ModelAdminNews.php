@@ -61,33 +61,34 @@ class ModelAdminNews
     }
     // Add
     public static function getNewsAdd()
-    {
-        $test = false;
-        if (isset($_POST['save'])) {
-            if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
+{
+    $test = false;
+    if (isset($_POST['save'])) {
+        if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) && isset($_POST['chtitle']) && isset($_POST['chtext'])) {
 
-                $title = $_POST['title'];
-                $text = $_POST['text'];
-                $idCategory = $_POST['idCategory'];
-                $chtitle = $_POST['chtitle'];
+            $title = $_POST['title'];
+            $text = $_POST['text'];
+            $idCategory = $_POST['idCategory'];
+            $chtitle = $_POST['chtitle'];
+            $chtext = $_POST['chtext']; 
 
-                // Images type blob
+            if(isset($_FILES['picture'])) {
                 $image = addslashes(file_get_contents($_FILES['picture']['tmp_name']));
-                // ----------------
+            } else {
+                $image = '';
+            }
 
-                $sql = "INSERT INTO `services` (`id`, `title`, `text`, `picture`, `category_id`, 
-                `user_id`,`chtitle`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
-                $db = new Database();
-                echo($sql);
-                $item = $db->executeRun($sql);
-                if ($item == true) {
-                    $test = true;
-                }
+            $sql = "INSERT INTO `services` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`, `chtitle`, `chtext`) 
+                    VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1', '$chtitle', '$chtext')";
+            $db = new Database();
+            $item = $db->executeRun($sql);
+            if ($item == true) {
+                $test = true;
             }
         }
-        return $test;
-        
     }
+    return $test;
+}
     public static function getNewsDelete($id)
 {
     $test = false;

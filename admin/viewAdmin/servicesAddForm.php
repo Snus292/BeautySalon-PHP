@@ -38,7 +38,11 @@
                         <td>services text</td>
                         <td><textarea rows="5" name="text" class="form-control" required></textarea></td>
                     </tr>
-
+                    
+                    <tr>
+                        <td>CH Text</td>
+                        <td><textarea rows="5" name="chtext" class="form-control" required></textarea></td>
+                    </tr>
                     <tr>
                         <td>Category</td>
                         <td>

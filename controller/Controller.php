@@ -36,6 +36,10 @@ class Controller
     {
         include_once 'view/info.php';
     }
+    public static function getcontact()
+    {
+        include_once 'view/contact.php';
+    }
     public static function error404()
     {
         include_once 'view/error404.php';

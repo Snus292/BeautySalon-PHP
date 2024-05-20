@@ -31,7 +31,7 @@
                         <?php
                         echo '<ul class="nav nav-pills pull-right">
                                 <li role="button">
-                                    ' . $_SESSION["name"] . '<a href="logout" style="display: inline;">Выйти <i class="fa fa-sign-out"></i></a>
+                                    ' . $_SESSION["name"] . '<a href="logout" style="display: inline;">Log out <i class="fa fa-sign-out"></i></a>
                                 </li>
                             </ul>';
 

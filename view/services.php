@@ -16,6 +16,7 @@ class ViewServices
     public static function allServices($arr)
     {
         foreach ($arr as $value) {
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($value['picture']) . '" width=150 /><br>';
             echo "<li>" . $value['title'];
             echo "<p>Price: $" . $value['price'] . "</p>"; 
             Controller::commentsCount($value['id']);

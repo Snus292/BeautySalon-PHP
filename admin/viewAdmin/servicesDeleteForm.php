@@ -9,15 +9,15 @@
             if ($test == true) {
         ?>
                 <div class="alert alert-info">
-                    <strong>Post deleted. </strong>
-                    <a href="newsAdmin"> Services list</a>
+                    <strong>Запись удалена. </strong>
+                    <a href="newsAdmin"> Список новостей</a>
                 </div>
             <?php
             } else if ($test == false) {
             ?>
                 <div class="alert alert-warning">
-                    <strong>error!</strong>
-                    <a href="newsAdmin"> Services list</a>
+                    <strong>Ошибка удаления записи!</strong>
+                    <a href="newsAdmin"> Список новостей</a>
                 </div>
             <?php
             }
@@ -26,14 +26,14 @@
             <form method="POST" action="newsDelResult?id=<?php echo $id; ?>" enctype="multipart/form-data">
                 <table class="table table-bordered">
                     <tr>
-                        <td>Services title</td>
+                        <td>News title</td>
                         <td>
                             <input type="text" name="title" class="form-control" required value="<?php echo $detail['title']; ?>" readonly>
                         </td>
                     </tr>
 
                     <tr>
-                        <td>Services text</td>
+                        <td>News text</td>
                         <td>
                             <textarea rows="5" name="text" class="form-control" required readonly><?php echo $detail['text']; ?></textarea>
                         </td>
@@ -70,10 +70,10 @@
                     <tr>
                         <td colspan="2">
                             <button type="submit" class="btn btn-primary" name="save">
-                                <span class="glyphicon glyphicon-remove"></span> Delete
+                                <span class="glyphicon glyphicon-remove"></span> Удалить
                             </button>
                             <a href="newsAdmin" class="btn btn-large btn-success">
-                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to list
+                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Назад к списку
                             </a>
                         </td>
                     </tr>

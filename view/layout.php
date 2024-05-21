@@ -84,38 +84,45 @@
     <body>
     <nav class="one">
     <div style="text-align: right; background: #93815E;">
-            <a href="/newsPortalV26/newsPortalChaina/"><img src="view/chflag.png" alt="Flag Image" width="50" height="50"></a>
-        </div>
-        <ul class="topmenu">
-            <li><a href="#">categories<i class="fa fa-angle-down"></i></a>
-                <ul class="submenu">
-                    <?php 
-                        Controller::AllCategory();
-                    ?>
-                </ul>
-            </li>
-            <li><a href="testError">Info</a></li>
-            <li><a href="./">start page</a></li>
-        </ul>
-        
-        <div class="navbar">
-            <img src="view/korner.png" width="100%" height="140" alt="Menu Image">
-        </div>
-    </nav>
+    <a href="/newsPortalV26/"><img src="view/ukflag.png" alt="Flag Image"width="50" height="50"></a></div>
+    <ul class="topmenu">
+        <li><a href="#">类别<i class="fa fa-angle-down"></i></a>
+            <ul class="submenu">
+                <?php 
+                    Controller::AllCategory();
+                ?>
+            </ul>
+        </li>
+        <li><a href="testError">信息</a></li>
+        <li><a href="./">斯塔迪莱特</a></li>
+        <div style="text-align: right;">
+    
+    
+</div>
+    </ul>
+    <div class="navbar">
+        <img src="view/korner.png" width="100%" height="140" alt="Menu Image">
+    </div>
+</nav>
 
-    <section>
-        <div class='divBox'>
-            <?php
-            if(isset($content)){
-                echo $content;
-            }
-            else{
-                echo '<h1>Content is gone!</h1>';
-            }
-            ?>
-        </div>
-    </section>
-    <hr>
-    <p style="display:block; text-align:center;">SPTV21 2024 a. &copy;</p>
+
+
+        <section>
+            <div class='divBox'>
+                <?php
+                if(isset($content)){
+                    echo $content;
+                }
+                else{
+                    echo '<h1>Content is gone!</h1>';
+                }
+                ?>
+            </div>
+        </section>
+        
+        <hr>
+        
+        <p style="display:block; text-align:center;">SPTV21 2024 a. &copy;</p>
     </body>
+    
 </html>

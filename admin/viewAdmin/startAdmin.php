@@ -1,9 +1,9 @@
 <?php ob_start() ?>
 <article>
     <div id="main" class="container">
-        <h3>Admin panel</h3>
+        <h3>Админ панель</h3>
         <div class="row">
-            <p>Admin panel</p>
+            <p>Админ панель</p>
         </div>
     </div>
 </article>

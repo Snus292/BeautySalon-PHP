@@ -17,25 +17,25 @@ elseif ($path == 'login') {
 }
 // listNews
 elseif ($path == 'newsAdmin') {
-    $response = ControllerAdminServices::servicesList();
+    $response = ControllerAdminNews::servicesList();
 }
 // add news
 elseif ($path == 'newsAdd') {
-    $response = ControllerAdminServices::servicesAddForm();
+    $response = ControllerAdminNews::servicesAddForm();
 } elseif ($path == 'newsAddResult') {
-    $response = ControllerAdminServices::servicesAddResult();
+    $response = ControllerAdminNews::servicesAddResult();
 }
 // edit news
 elseif ($path == 'newsEdit' && isset($_GET['id'])) {
-    $response = ControllerAdminServices::servicesEditForm($_GET['id']);
+    $response = ControllerAdminNews::servicesEditForm($_GET['id']);
 } elseif ($path == 'newsEditResult' && isset($_GET['id'])) {
-    $response = ControllerAdminServices::servicesEditResult($_GET['id']);
+    $response = ControllerAdminNews::servicesEditResult($_GET['id']);
 }
 // delete news
 elseif ($path == 'newsDel' && isset($_GET['id'])) {
-    $response = ControllerAdminServices::servicesDeleteForm($_GET['id']);
+    $response = ControllerAdminNews::servicesDeleteForm($_GET['id']);
 } elseif ($path == 'newsDelResult' && isset($_GET['id'])) {
-    $response = ControllerAdminServices::servicesDeleteResult($_GET['id']);
+    $response = ControllerAdminNews::servicesDeleteResult($_GET['id']);
 }
 // Страница не существует
 else {

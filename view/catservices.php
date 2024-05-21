@@ -1,7 +1,7 @@
 <?php
 ob_start();
 ?>
-<h1>our services</h1>
+<h1>我们的服务</h1>
 <br>
 
 <?php

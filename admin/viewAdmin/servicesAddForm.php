@@ -9,15 +9,15 @@
             if ($test == true) {
         ?>
                 <div class="alert alert-info">
-                    <strong>Entry added. </strong>
-                    <a href="newsAdmin"> Services list</a>
+                    <strong>Запись добавлена. </strong>
+                    <a href="newsAdmin"> Список услуг</a>
                 </div>
             <?php
             } else if ($test == false) {
             ?>
                 <div class="alert alert-warning">
-                    <strong>error!</strong>
-                    <a href="newsAdmin"> Services list</a>
+                    <strong>Ошибка добавления записи!</strong>
+                    <a href="newsAdmin"> Список услуг</a>
                 </div>
             <?php
             }
@@ -29,20 +29,12 @@
                         <td>services title</td>
                         <td><input type="text" name="title" class="form-control" required></td>
                     </tr>
-                    <tr>
-                        <td>services chtitle</td>
-                        <td><input type="text" name="chtitle" class="form-control" required></td>
-                    </tr>
 
                     <tr>
                         <td>services text</td>
                         <td><textarea rows="5" name="text" class="form-control" required></textarea></td>
                     </tr>
-                    
-                    <tr>
-                        <td>CH Text</td>
-                        <td><textarea rows="5" name="chtext" class="form-control" required></textarea></td>
-                    </tr>
+
                     <tr>
                         <td>Category</td>
                         <td>
@@ -67,20 +59,13 @@
                     </tr>
                     <!-- End image -->
 
-                    <!-- Price -->
-                    <tr>
-                        <td>Price</td>
-                        <td><input type="number" step="0.01" name="price" class="form-control" required></td>
-                    </tr>
-                    <!-- End price -->
-
                     <tr>
                         <td colspan="2">
                             <button type="submit" class="btn btn-primary" name="save">
-                                <span class="glyphicon glyphicon-plus"></span> Save
+                                <span class="glyphicon glyphicon-plus"></span> Сохранить
                             </button>
                             <a href="newsAdmin" class="btn btn-large btn-success">
-                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to list
+                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Назад к списку
                             </a>
                         </td>
                     </tr>

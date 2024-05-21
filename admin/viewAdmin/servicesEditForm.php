@@ -9,15 +9,15 @@
             if ($test == true) {
         ?>
                 <div class="alert alert-info">
-                    <strong>Entry changed. </strong>
-                    <a href="newsAdmin"> Services list</a>
+                    <strong>Запись изменена. </strong>
+                    <a href="newsAdmin"> Список новостей</a>
                 </div>
             <?php
             } else if ($test == false) {
             ?>
                 <div class="alert alert-warning">
-                    <strong>Error!</strong>
-                    <a href="newsAdmin"> Services list</a>
+                    <strong>Ошибка изменения записи!</strong>
+                    <a href="newsAdmin"> Список новостей</a>
                 </div>
             <?php
             }
@@ -29,12 +29,6 @@
                         <td>News title</td>
                         <td>
                             <input type="text" name="title" class="form-control" required value="<?php echo $detail['title']; ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>News chtitle</td>
-                        <td>
-                            <input type="text" name="chtitle" class="form-control" required value="<?php echo $detail['title']; ?>">
                         </td>
                     </tr>
 
@@ -84,10 +78,10 @@
                     <tr>
                         <td colspan="2">
                             <button type="submit" class="btn btn-primary" name="save">
-                                <span class="glyphicon glyphicon-edit"></span> Change
+                                <span class="glyphicon glyphicon-edit"></span> Изменить
                             </button>
                             <a href="newsAdmin" class="btn btn-large btn-success">
-                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to list
+                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Назад к списку
                             </a>
                         </td>
                     </tr>

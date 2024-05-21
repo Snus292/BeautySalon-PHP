@@ -113,23 +113,22 @@ ob_start();
     <div class="mySlides fade">
         <div class="numbertext">1 / 3</div>
         <img src="view/pict/AdobeStock_423961853.jpeg" style="width:100%">
-        <div class="text">BENEFITS OF SPA FOR BODY HEALTH</div>
+        <div class="text">水疗对身体健康的好处</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">2 / 3</div>
         <img src="view/pict/Face-mask-on-the-spa.jpeg" style="width:100%">
-        <div class="text">Cleansing and Brightening the Skin
-</div>
+        <div class="text">清洁和提亮肌肤</div>
     </div>
 
     <div class="mySlides fade">
         <div class="numbertext">3 / 3</div>
         <img src="view/pict/Massage-Relaxing.jpeg" style="width:100%">
-        <div class="text">Enhancing Happiness</div>
+        <div class="text">提升幸福感</div>
     </div>
 
-    <!-- Next and previous buttons -->
+ 
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
     <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
@@ -141,7 +140,7 @@ ob_start();
     <span class="dot" onclick="currentSlide(2)"></span>
     <span class="dot" onclick="currentSlide(3)"></span>
 </div>
-<h1>TOP 3 services</h1>
+<h1>前 3 名服务</h1>
 <br>
 
 <div class="services-horizontal">

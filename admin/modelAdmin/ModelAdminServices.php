@@ -21,44 +21,54 @@ class ModelAdminServices
         return $arr;
     }
     public static function getNewsEdit($id)
-    {
-        $test = false;
-        if (isset($_POST['save'])) {
-            if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
+{
+    $test = false;
+    if (isset($_POST['save'])) {
+        // Добавим блок else для корректной логики
+        if (isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
+            $title = $_POST['title'];
+            $text = $_POST['text'];
+            $idCategory = $_POST['idCategory'];
 
-                $title = $_POST['title'];
-                $text = $_POST['text'];
-                $idCategory = $_POST['idCategory'];
-
-                // Images type blob
-                $image = $_FILES['picture']['name'];
-                if($image!=""){
-                    //var_dump ($_FILES['picture']);/
-                    $image=addslashes(file_get_contents($_FILES['picture']['tmp_name']));
+            // Images type blob
+            $image = $_FILES['picture']['name'];
+            if($image!=""){
+                $image=addslashes(file_get_contents($_FILES['picture']['tmp_name']));
             }
-                
-                if($image!="") {
-                    $sql="UPDATE `services` SET `title` = '$title', `text` = '$text',
-                    `category_id` = '$idCategory' Where `services`.`id`=".$id;
-                } else {
-                    $sql="UPDATE `services` SET `title` = '$title', `text` = '$text', `picture`='$image',
-                    `category_id` = '$idCategory' Where `services`.`id`=".$id;
-                }
-                
-
-                // ----------------
-
-                $sql = "INSERT INTO `services` (`id`, `title`, `text`, `picture`, `category_id`, 
-                `user_id`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
-                $db = new Database();
-                $item = $db->executeRun($sql);
-                if ($item == true) {
-                    $test = true;
-                }
+            
+            // Проверяем, был ли выбран файл изображения
+            if($image=="") {
+                // Если файл не выбран, обновляем запись без изображения
+                $sql="UPDATE `services` SET `title` = '$title', `text` = '$text',
+                `category_id` = '$idCategory' Where `services`.`id`=".$id;
+            } else {
+                // Если файл выбран, обновляем запись с изображением
+                $sql="UPDATE `services` SET `title` = '$title', `text` = '$text', `picture`='$image',
+                `category_id` = '$idCategory' Where `services`.`id`=".$id;
             }
+
+            // Ваш код имеет лишнюю строку с запросом SQL
+            // Либо обновление, либо вставка новой записи, но не оба сразу
+            // $sql = "INSERT INTO `services` (`id`, `title`, `text`, `picture`, `category_id`, 
+            // `user_id`) VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
+            
+            // Выполняем запрос SQL
+            $db = new Database();
+            $item = $db->executeRun($sql);
+            if ($item == true) {
+                $test = true;
+            }
+        } else {
+            // Добавим обработку случая, если данные не были переданы правильно
+            // Например, вы можете установить переменную $test в false и отобразить ошибку
+            // или сделать другие действия в соответствии с вашими потребностями.
+            // Например:
+            // echo "Error: Data not provided correctly.";
         }
-        return $test;
     }
+    return $test;
+}
+
     // Add
     public static function getNewsAdd()
     {

@@ -9,15 +9,15 @@
             if ($test == true) {
         ?>
                 <div class="alert alert-info">
-                    <strong>Запись изменена. </strong>
-                    <a href="newsAdmin"> Список новостей</a>
+                    <strong>Entry changed. </strong>
+                    <a href="newsAdmin"> Services list</a>
                 </div>
             <?php
             } else if ($test == false) {
             ?>
                 <div class="alert alert-warning">
-                    <strong>Ошибка изменения записи!</strong>
-                    <a href="newsAdmin"> Список новостей</a>
+                    <strong>Error!</strong>
+                    <a href="newsAdmin"> Services list</a>
                 </div>
             <?php
             }
@@ -29,6 +29,12 @@
                         <td>News title</td>
                         <td>
                             <input type="text" name="title" class="form-control" required value="<?php echo $detail['title']; ?>">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>News chtitle</td>
+                        <td>
+                            <input type="text" name="chtitle" class="form-control" required value="<?php echo $detail['title']; ?>">
                         </td>
                     </tr>
 
@@ -59,8 +65,6 @@
                         <td>Old Picture</td>
                         <td>
                             <div>
-                                <!-- <img src="../images/<?php //echo $detail['picture']; 
-                                                            ?>" width=150> -->
                                 <?php echo '<img src="data:image/jpeg;base64,' . base64_encode($detail['picture']) . '" />'; ?>
                             </div>
                         </td>
@@ -69,7 +73,8 @@
                         <td>New Picture</td>
                         <td>
                             <div>
-                                <input type="file" name="picture" style="color:black;">
+                                <input type="file" name="picture" id="pictureInput" style="color:black;">
+                                <p id="fileHint" style="color:red; display:none;">Please select a file.</p>
                             </div>
                         </td>
                     </tr>
@@ -77,11 +82,12 @@
 
                     <tr>
                         <td colspan="2">
-                            <button type="submit" class="btn btn-primary" name="save">
-                                <span class="glyphicon glyphicon-edit"></span> Изменить
+                            <button type="submit" id="submitButton" class="btn btn-primary" name="save" disabled>
+                                <span class="glyphicon glyphicon-edit"></span> Change
                             </button>
+
                             <a href="newsAdmin" class="btn btn-large btn-success">
-                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Назад к списку
+                                <i class="glyphicon glyphicon-backward"></i> &nbsp;Back to list
                             </a>
                         </td>
                     </tr>
@@ -93,6 +99,26 @@
         ?>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var fileInput = document.getElementById('pictureInput');
+        var submitButton = document.getElementById('submitButton');
+        var fileHint = document.getElementById('fileHint');
+
+
+        fileInput.addEventListener('change', function () {
+            
+            if (fileInput.files.length > 0) {
+                submitButton.disabled = false;
+                fileHint.style.display = 'none';
+            } else {
+                
+                submitButton.disabled = true;
+                fileHint.style.display = 'block';
+            }
+        });
+    });
+</script>
 
 <?php $content = ob_get_clean(); ?>
 <?php include "viewAdmin/templates/layout.php"; ?>

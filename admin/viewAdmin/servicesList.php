@@ -4,7 +4,7 @@
 
 <div class="container" style="min-height:400px;">
     <div style="margin:20px;">
-        <a href="newsAdd" class="btn btn-primary" role="button">Добавить услугу</a>
+        <a href="newsAdd" class="btn btn-primary" role="button">Add a service</a>
     </div>
     <div class="col-md-11">
         <table class="table table-bordered table-responsive">

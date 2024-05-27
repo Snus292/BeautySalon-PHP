@@ -84,7 +84,7 @@
     <body>
     <nav class="one">
     <div style="text-align: right; background: #93815E;">
-    <a href="/newsPortalV26/"><img src="view/ukflag.png" alt="Flag Image"width="50" height="50"></a></div>
+    <a href="/spaV26/"><img src="view/ukflag.png" alt="Flag Image"width="50" height="50"></a></div>
     <ul class="topmenu">
         <li><a href="#">类别<i class="fa fa-angle-down"></i></a>
             <ul class="submenu">

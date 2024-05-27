@@ -5,8 +5,8 @@ class ViewComments
     {
         echo '<form action="insertcomment">
         <input type="hidden" name="id" value="' . $_GET['id'] . '">
-            Teie kommentaar: <input type="text" name="comment">
-            <input type="submit" value="Saada"></form>';
+        你的评论: <input type="text" name="comment">
+            <input type="submit" value="发送"></form>';
     }
 
     public static function commentsByServices($arr)

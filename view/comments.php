@@ -5,14 +5,14 @@ class ViewComments
     {
         echo '<form action="insertcomment">
         <input type="hidden" name="id" value="' . $_GET['id'] . '">
-            Teie kommentaar: <input type="text" name="comment">
-            <input type="submit" value="Saada"></form>';
+            Your comment: <input type="text" name="comment">
+            <input type="submit" value="send"></form>';
     }
 
     public static function commentsByServices($arr)
     {
         if ($arr != null) {
-            echo '<table id="ctable"><th>评论</th><th>日期</th>';
+            echo '<table id="ctable"><th>comment</th><th>date</th>';
             foreach ($arr as $value) {
                 echo '<tr><td>' . $value['text'] . "</td><td>" . $value['date'] . "</td></tr>";
             }

@@ -7,14 +7,14 @@
             justify-content: space-between;
         }
         .services-horizontal li {
-            margin-right: 250px; /* Устанавливаем отступ между элементами списка */
+            margin-right: 230px; 
         }
         
     }
 </style>
 
 <?php ob_start(); ?>
-<h1>所有服务</h1>
+<h1>all services</h1>
 <br>
 
 <div class="services-horizontal">
